@@ -17,11 +17,11 @@ scrapings_dir='scrapings'
 if not os.path.exists(scrapings_dir):
         os.mkdir(scrapings_dir)
 
-artist="coldplay"
+artist="l+couch"
 city="sydney"
 URL_START='http://www.gumtree.com.au'
 OFFER_CHOICE=['k0?ad=offering','k0?ad=wanted']
-ARTIST_URL="coldplay"#re.sub("\s",+,artist)
+ARTIST_URL="l+couch"#re.sub("\s",+,artist)
 
 def scrape_gumtree_page_n(n):
     current_time=int(time.time())
@@ -95,6 +95,6 @@ def regular_scraping():
     json_file=open('master_file.text',"w")
     json_file.write(json.dumps(old_data))
     json_file.close()
-#    threading.Timer(60, regular_scraping()).start()
+    threading.Timer(60, regular_scraping()).start()
 
 regular_scraping()
