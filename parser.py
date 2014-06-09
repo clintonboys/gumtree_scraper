@@ -78,7 +78,7 @@ def regular_scraping():
     else:
         old_data=[]
     this_scrape=[]
-    for n in range(1,pages_to_scrape()):
+    for n in range(1,pages_to_scrape()+1):
         this_scrape.append(html_parser(scrape_gumtree_page_n(n)))
         data_ids=[]
         new_entries=[]
@@ -95,6 +95,6 @@ def regular_scraping():
     json_file=open('master_file.text',"w")
     json_file.write(json.dumps(old_data))
     json_file.close()
-    threading.Timer(60, regular_scraping()).start()
+#    threading.Timer(60, regular_scraping()).start()
 
 regular_scraping()
