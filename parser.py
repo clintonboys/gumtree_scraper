@@ -95,6 +95,13 @@ def regular_scraping():
     json_file=open('master_file.text',"w")
     json_file.write(json.dumps(old_data))
     json_file.close()
-    threading.Timer(240, regular_scraping()).start()
+#    threading.Timer(240, regular_scraping()).start()
 
-regular_scraping()
+#regular_scraping()
+
+def execute_scraper():
+    regular_scraping()
+    time.sleep(120)
+
+while True:
+    execute_scraper()
