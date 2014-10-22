@@ -1,0 +1,5 @@
+for n in [1..15] do
+for la in Partitions(n) do
+if not Dominates(la,ConjugatePartition(la)) then
+if not Dominates(ConjugatePartition(la),la) then
+Print(la,"\n");fi;fi;od;od;
